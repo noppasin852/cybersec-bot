@@ -6,7 +6,7 @@ const app = express();
 // รับ JSON
 app.use(express.json());
 
-// เชื่อม MongoDB
+app.use("/auth", require("./routes/auth"));
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("DB connected"))
   .catch(err => console.log("DB error:", err));
