@@ -11,7 +11,7 @@ const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
 
-client.on("ready", () => {
+client.on("clientReady", () => {
   console.log("Bot online");
 });
 
