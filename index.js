@@ -1,3 +1,4 @@
+require("./server");
 const { Client, GatewayIntentBits } = require('discord.js');
 const axios = require('axios');
 const express = require("express");
