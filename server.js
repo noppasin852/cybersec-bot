@@ -5,7 +5,7 @@ const app = express();
 
 // รับ JSON
 app.use(express.json());
-
+app.use("/auth", require("./routes/auth"));
 // เชื่อม MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("DB connected"))
