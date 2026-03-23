@@ -1,3 +1,4 @@
+require("./server");
 const { Client, GatewayIntentBits } = require('discord.js');
 const axios = require('axios');
 const express = require("express");
@@ -10,7 +11,7 @@ const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
 
-client.on("ready", () => {
+client.on("clientReady", () => {
   console.log("Bot online");
 });
 
