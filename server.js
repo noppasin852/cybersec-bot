@@ -6,13 +6,13 @@ const app = express();
 // รับ JSON
 app.use(express.json());
 
+// ใช้ auth route (เอาไว้ครั้งเดียวพอ)
 app.use("/auth", require("./routes/auth"));
+
+// เชื่อม MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("DB connected"))
   .catch(err => console.log("DB error:", err));
-
-// ใช้ auth route
-app.use("/auth", require("./routes/auth"));
 
 // หน้า test
 app.get("/", (req, res) => {
